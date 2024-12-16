@@ -1,11 +1,11 @@
-name: Run Locust Tests on Commit
+name: Unit test testing + coverage
 on:
   push:
     branches:
       - main
 
 jobs:
-  locust-test:
+  Unit-Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +30,7 @@ jobs:
       - name: Generate coverage report
         run: |
           coverage run -m unittest
+          coverage report
           coverage html
 
       - name: archive report
