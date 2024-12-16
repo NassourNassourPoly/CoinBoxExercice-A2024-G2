@@ -29,6 +29,7 @@ jobs:
 
       - name: Generate coverage report
         run: |
+          cd src
           coverage run -m unittest
           coverage report
           coverage html
